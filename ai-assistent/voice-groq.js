@@ -39,13 +39,25 @@ function speak(text) {
 
 async function fetchGroq(messages) {
   try {
-    const response = await fetch('http://localhost:3001/ask-groq', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ messages }),
-    });
+    const response = await fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ prompt: "Halo!" }) // Sesuaikan dengan backend kamu
+})
+  .then(res => res.json())
+  .then(data => {
+    console.log('Respon dari backend:', data);
+    const output = document.getElementById('data-output');
+    if (output) {
+      output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    }
+  })
+  .catch(err => {
+    console.error('Gagal mengambil data dari backend:', err);
+  });
+
 
     const data = await response.json();
     return data.answer || "Maaf, tidak ada jawaban dari AI.";
