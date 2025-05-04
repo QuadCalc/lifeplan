@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifePlanCalc - CyberAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🔷 Banner Atas / Header Logo dan Nama -->
+  <header class="top-banner">
+    <div class="banner-content">
+      <img src="image/logo.png" alt="Logo LifePlanCalc" class="banner-logo" />
+      <div class="banner-text">
+        <h1>LifePlanCalc</h1>
+        <p>Perencana Kehidupan Cerdas Berbasis AI oleh Kelompok 7</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🎙️ Asisten AI -->
+  <div class="ai-assistant">
+    <button id="voiceBtn">🎙️ Tanya Asisten</button>
+    <div id="aiResponse"></div>
+  </div>
+
+  <!-- 🔗 Navigasi -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="./Pages/fitur.html">Fitur</a></li>
+      <li><a href="./Pages/partner.html">Partner</a></li>
+      <li><a href="./Pages/aboutme.html">About Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🌌 Efek Matrix -->
+  <canvas id="matrix"></canvas>
+
+  <!-- 🎵 Musik Latar -->
+  <audio autoplay loop id="bgmusic">
+    <source src="https://cdn.pixabay.com/download/audio/2022/12/09/audio_0dc98f1e75.mp3?filename=cyberpunk-moonlight-126199.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- 🧠 Panel Informasi -->
+  <div class="digital-board">
+    <h2>👁️ Selamat Datang di LifePlanCalc</h2>
+    <p>
+      LifePlanCalc adalah sistem berbasis AI yang membantu Anda merencanakan kehidupan secara strategis,
+      mulai dari karier, akademik, kesehatan, hingga pengembangan diri.
+    </p>
+  </div>
+
+  <div class="digital-board">
+    <h2>🧠 Apa yang Bisa Dilakukan?</h2>
+    <p>
+      Dengan teknologi AI dan analisis wajah, sistem ini membaca ekspresi, emosi, dan fokus Anda,
+      lalu memberi rekomendasi rencana hidup yang paling sesuai.
+    </p>
+  </div>
+
+  <div class="digital-board">
+    <h2>🚀 Siapa Kami?</h2>
+    <p>
+      Kami adalah tim mahasiswa inovatif dari Teknik Informatika yang berambisi membawa perencanaan hidup
+      ke level selanjutnya—menggabungkan teknologi, psikologi, dan data.
+    </p>
+  </div>
+
+  <!-- 📌 Konten Utama -->
+  <main class="container" id="main">
+    <h2 id="fitur">📌 Masalah Umum</h2>
+    <ul>
+      <li>❌ Kehilangan arah hidup</li>
+      <li>❌ Rencana tanpa strategi nyata</li>
+      <li>❌ Tidak ada pemantauan perkembangan</li>
+    </ul>
+
+    <h2>✅ Solusi LifePlanCalc</h2>
+    <ul>
+      <li>⚡ Rencana visual interaktif</li>
+      <li>⚡ Rekomendasi berbasis data pribadi</li>
+      <li>⚡ Evaluasi rutin dan grafik pertumbuhan</li>
+    </ul>
+  </main>
+
+  <!-- 📜 Script -->
+  <script src="script.js"></script>
+  <script src="./ai-assistent/voice-groq.js"></script>
+
+
+</body>
+</html>
