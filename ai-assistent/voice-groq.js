@@ -39,7 +39,7 @@ function speak(text) {
 
 async function fetchGroq(messages) {
   try {
-    const response = await fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
+    const response = await fetch('https://mybackend-950s.onrender.com/ask-groq', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
