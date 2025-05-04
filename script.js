@@ -157,14 +157,16 @@ slider.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 2; // Geser dua kali lebih cepat
   slider.scrollLeft = scrollLeft - walk;
 });
-
-// 🔁 Ambil data dari backend API dan tampilkan ke elemen HTML
-fetch('https://mybackend-production-d348.up.railway.app')
+fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ prompt: "Halo!" }) // Sesuaikan dengan backend kamu
+})
   .then(res => res.json())
   .then(data => {
-    console.log('Data dari backend:', data);
-
-    // Contoh: tampilkan data di elemen dengan id="data-output"
+    console.log('Respon dari backend:', data);
     const output = document.getElementById('data-output');
     if (output) {
       output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
@@ -173,15 +175,3 @@ fetch('https://mybackend-production-d348.up.railway.app')
   .catch(err => {
     console.error('Gagal mengambil data dari backend:', err);
   });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const mic = document.getElementById('mic');
-    if (mic) {
-      mic.onclick = startListening;
-    } else {
-      console.warn('Element #mic tidak ditemukan.');
-    }
-  });
-  
-
-
