@@ -1,6 +1,6 @@
-
 const voiceBtn = document.getElementById('voiceBtn');
 const responseBox = document.getElementById('aiResponse');
+const output = document.getElementById('data-output');
 
 const synth = window.speechSynthesis;
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -38,21 +38,42 @@ function speak(text) {
   synth.speak(utter);
 }
 
-// 🔁 Komunikasi ke Backend Railway
-const output = document.getElementById('data-output');
+// 🔁 Komunikasi ke Backend Render (baru)
+async function fetchGroq(messageHistory) {
+  try {
+    const res = await fetch('https://mybackend-1i48.onrender.com/ask-groq', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ messages: messageHistory })
+    });
+
+    const data = await res.json();
+    return data.answer || '[❌ Tidak ada jawaban]';
+  } catch (err) {
+    console.error('Gagal komunikasi dengan backend:', err);
+    return '[❌ Gagal menghubungi server]';
+  }
+}
+
+// 📦 Tombol contoh manual
+document.getElementById('tanya-btn')?.addEventListener('click', () => {
+  tanyaAsisten('Halo!');
+});
 
 function tanyaAsisten(pesan) {
+  const messages = [
+    { role: "system", content: "Kamu adalah asisten AI pribadi yang menjawab dengan jelas dan ringkas." },
+    { role: "user", content: pesan }
+  ];
+
   fetch('https://mybackend-1i48.onrender.com/ask-groq', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      messages: [
-        { role: "system", content: "Kamu adalah asisten AI pribadi yang menjawab dengan jelas dan ringkas." },
-        { role: "user", content: pesan }
-      ]
-    })
+    body: JSON.stringify({ messages })
   })
     .then(res => res.json())
     .then(data => {
@@ -68,9 +89,3 @@ function tanyaAsisten(pesan) {
       }
     });
 }
-
-
-// 📦 Contoh trigger tombol
-document.getElementById('tanya-btn')?.addEventListener('click', () => {
-  tanyaAsisten('Halo!');
-});
