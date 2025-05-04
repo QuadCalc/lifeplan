@@ -158,3 +158,20 @@ slider.addEventListener('mousemove', (e) => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
+// 🔁 Ambil data dari backend API dan tampilkan ke elemen HTML
+fetch('https://mybackend.up.railway.app/api/data')
+  .then(res => res.json())
+  .then(data => {
+    console.log('Data dari backend:', data);
+
+    // Contoh: tampilkan data di elemen dengan id="data-output"
+    const output = document.getElementById('data-output');
+    if (output) {
+      output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    }
+  })
+  .catch(err => {
+    console.error('Gagal mengambil data dari backend:', err);
+  });
+
+
