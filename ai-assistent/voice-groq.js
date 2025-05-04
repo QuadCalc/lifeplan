@@ -41,7 +41,7 @@ function speak(text) {
 // 🔁 Komunikasi ke Backend Render (baru)
 async function fetchGroq(messageHistory) {
   try {
-    const res = await fetch('https://mybackend-1i48.onrender.com/ask-groq', {
+    const res = await fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
