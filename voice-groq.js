@@ -41,12 +41,17 @@ function speak(text) {
 const output = document.getElementById('data-output');
 
 function tanyaAsisten(pesan) {
-  fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
+  fetch('https://mybackend-1i48.onrender.com/ask-groq', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ prompt: pesan })
+    body: JSON.stringify({
+      messages: [
+        { role: "system", content: "Kamu adalah asisten AI pribadi yang menjawab dengan jelas dan ringkas." },
+        { role: "user", content: pesan }
+      ]
+    })
   })
     .then(res => res.json())
     .then(data => {
@@ -62,6 +67,7 @@ function tanyaAsisten(pesan) {
       }
     });
 }
+
 
 // 📦 Contoh trigger tombol
 document.getElementById('tanya-btn')?.addEventListener('click', () => {
