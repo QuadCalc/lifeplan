@@ -174,6 +174,14 @@ fetch('mybackend-production-d348.up.railway.app')
     console.error('Gagal mengambil data dari backend:', err);
   });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const mic = document.getElementById('mic');
+    if (mic) {
+      mic.onclick = startListening;
+    } else {
+      console.warn('Element #mic tidak ditemukan.');
+    }
+  });
   
 
 
