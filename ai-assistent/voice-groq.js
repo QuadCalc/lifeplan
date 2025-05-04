@@ -37,32 +37,32 @@ function speak(text) {
   synth.speak(utter);
 }
 
+// 🔁 Komunikasi ke Backend Railway
+const output = document.getElementById('data-output');
+
 async function fetchGroq(messages) {
   try {
-    const response = await fetch('https://mybackend-950s.onrender.com/ask-groq', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({ prompt: "Halo!" }) // Sesuaikan dengan backend kamu
-})
-  .then(res => res.json())
-  .then(data => {
-    console.log('Respon dari backend:', data);
-    const output = document.getElementById('data-output');
-    if (output) {
-      output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    const res = await fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: messageHistory })
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.error("Respon dari backend:", errText);
+      throw new Error("Gagal merespon: " + res.status);
     }
-  })
-  .catch(err => {
-    console.error('Gagal mengambil data dari backend:', err);
-  });
 
-
-    const data = await response.json();
-    return data.answer || "Maaf, tidak ada jawaban dari AI.";
-  } catch (error) {
-    console.error("Fetch error:", error);
-    return "Terjadi kesalahan saat menghubungi server.";
+    const data = await res.json();
+    return data.reply || "Maaf, tidak ada balasan dari AI.";
+  } catch (err) {
+    console.error("Fetch error:", err);
+    return "CyberAI: Terjadi kesalahan saat menghubungi server.";
   }
 }
+
+// 📦 Contoh trigger tombol
+document.getElementById('tanya-btn')?.addEventListener('click', () => {
+  tanyaAsisten('Halo!');
+});
