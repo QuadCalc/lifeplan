@@ -1,3 +1,4 @@
+
 const voiceBtn = document.getElementById('voiceBtn');
 const responseBox = document.getElementById('aiResponse');
 
@@ -40,27 +41,34 @@ function speak(text) {
 // 🔁 Komunikasi ke Backend Railway
 const output = document.getElementById('data-output');
 
-async function fetchGroq(messages) {
-  try {
-    const res = await fetch('https://mybackend-1i48.onrender.com/ask-groq', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: messageHistory })
+function tanyaAsisten(pesan) {
+  fetch('https://mybackend-1i48.onrender.com/ask-groq', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      messages: [
+        { role: "system", content: "Kamu adalah asisten AI pribadi yang menjawab dengan jelas dan ringkas." },
+        { role: "user", content: pesan }
+      ]
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log('Respon dari backend:', data);
+      if (output) {
+        output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      }
+    })
+    .catch(err => {
+      console.error('Gagal mengambil data dari backend:', err);
+      if (output) {
+        output.innerHTML = `<span style="color:red;">❌ Gagal menghubungi server.</span>`;
+      }
     });
-
-    if (!res.ok) {
-      const errText = await res.text();
-      console.error("Respon dari backend:", errText);
-      throw new Error("Gagal merespon: " + res.status);
-    }
-
-    const data = await res.json();
-    return data.reply || "Maaf, tidak ada balasan dari AI.";
-  } catch (err) {
-    console.error("Fetch error:", err);
-    return "CyberAI: Terjadi kesalahan saat menghubungi server.";
-  }
 }
+
 
 // 📦 Contoh trigger tombol
 document.getElementById('tanya-btn')?.addEventListener('click', () => {
