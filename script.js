@@ -157,21 +157,3 @@ slider.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 2; // Geser dua kali lebih cepat
   slider.scrollLeft = scrollLeft - walk;
 });
-fetch('https://mybackend-production-d348.up.railway.app/ask-groq', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({ prompt: "Halo!" }) // Sesuaikan dengan backend kamu
-})
-  .then(res => res.json())
-  .then(data => {
-    console.log('Respon dari backend:', data);
-    const output = document.getElementById('data-output');
-    if (output) {
-      output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-    }
-  })
-  .catch(err => {
-    console.error('Gagal mengambil data dari backend:', err);
-  });
