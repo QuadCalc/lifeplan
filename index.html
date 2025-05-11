@@ -1,99 +1,428 @@
-
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LifePlanCalc - CyberAI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LifePlanCalc - CyberAI</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body>
 
-  <!-- 🔷 Banner Atas / Header Logo dan Nama -->
-  <header class="top-banner">
-    <div class="banner-content">
-      <img src="image/logo.png" alt="Logo LifePlanCalc" class="banner-logo" />
-      <div class="banner-text">
-        <h1>LifePlanCalc</h1>
-        <p>Perencana Kehidupan Cerdas Berbasis AI oleh Kelompok 7</p>
-      </div>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">LifePlanCalc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feature">Feature</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Welcome To Our Website!</div>
+            <div class="masthead-heading text-uppercase">Life Plan Calc</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#home">Here</a>
+        </div>
+    </header>
+
+    <!-- Home-->
+    <section class="page-section" id="home">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Home</h2>
+                <h3 class="section-subheading text-muted">Selamat Datang di LifePlanCalc</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h4 class="my-3">Apa itu LifePlanCalc?</h4>
+                    <p class="text-muted">LifePlanCalc adalah sistem berbasis AI yang membantu Anda merencanakan
+                        kehidupan secara strategis, mulai dari karier, akademik, kesehatan, hingga pengembangan diri.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="my-3">Apa yang Bisa Dilakukan?</h4>
+                    <p class="text-muted">Dengan teknologi AI dan analisis wajah, sistem ini membaca ekspresi, emosi,
+                        dan fokus Anda, lalu memberi rekomendasi rencana hidup yang paling sesuai.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="my-3">Siapa Kami?</h4>
+                    <p class="text-muted">Kami adalah tim mahasiswa inovatif dari Teknik Informatika yang berambisi
+                        membawa perencanaan hidup ke level selanjutnya menggabungkan teknologi, psikologi, dan data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Grid-->
+    <section class="page-section bg-light" id="feature">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Feature</h2>
+                <h3 class="section-subheading text-muted">Berikut ini adalah beberapa fitur dari website kami.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+                    <!-- Feature 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <img class="img-fluid" src="assets/img/portfolio/akademik.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Perencanaan Akademik</div>
+                            <div class="portfolio-caption-subheading text-muted">Nilai, studi, dan rencana semester
+                                Anda.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+                    <!-- Feature 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <img class="img-fluid" src="assets/img/portfolio/keuangan.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Perencanaan Keuangan</div>
+                            <div class="portfolio-caption-subheading text-muted">Tabungan, investasi, dan kontrol
+                                pengeluaran.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+                    <!-- Feature 3-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <img class="img-fluid" src="assets/img/portfolio/pengembangan-diri.png" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Pengembangan Diri dan Mental</div>
+                            <div class="portfolio-caption-subheading text-muted">Mindset positif, buku, journaling, dan
+                                refleksi.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">About</h2>
+                <h3 class="section-subheading text-muted">Mengapa kita membuat website ini?</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"
+                            alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Masalah Utama</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Dalam kehidupan sehari-hari, banyak orang merasa kehilangan arah tanpa
+                                tahu dengan pasti ke mana mereka sedang menuju. Rencana yang disusun seringkali bersifat
+                                umum dan tidak didukung oleh strategi yang konkret, sehingga sulit untuk dijalankan
+                                secara konsisten. Selain itu, kurangnya pemantauan terhadap perkembangan membuat
+                                seseorang sulit menilai apakah mereka sedang maju, stagnan, atau bahkan mundur. Tanpa
+                                sistem yang membantu melacak dan mengevaluasi, rencana hidup mudah terbengkalai dan
+                                kehilangan makna.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg"
+                            alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Solusi LifePlanCalc</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">LifePlanCalc hadir untuk menjawab tantangan tersebut dengan pendekatan
+                                yang cerdas dan terstruktur. Aplikasi ini menyediakan tampilan visual yang interaktif,
+                                memudahkan pengguna dalam memahami dan mengelola rencana hidup mereka. Dengan teknologi
+                                berbasis data pribadi, LifePlanCalc memberikan rekomendasi yang relevan dan disesuaikan
+                                dengan kondisi masing-masing individu. Tidak hanya itu, aplikasi ini juga memungkinkan
+                                evaluasi rutin serta menampilkan grafik pertumbuhan yang jelas, sehingga pengguna dapat
+                                memantau perkembangan mereka secara berkelanjutan dan membuat penyesuaian yang
+                                diperlukan secara tepat waktu.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            Be Part
+                            <br />
+                            Of Our
+                            <br />
+                            Story!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Team-->
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Our Team</h2>
+                <h3 class="section-subheading text-muted">Berikut ini adalah team kami</h3>
+            </div>
+            <div class="row">
+
+                <div class="container">
+                    
+                    <!-- Baris 1: 3 Orang -->
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="team-member text-center">
+                                <img class="mx-auto rounded-circle" src="assets/img/team/reza.png" alt="..." />
+                                <h4>Reza Fahri Fauzi</h4>
+                                <p class="text-muted">247006111124</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="team-member text-center">
+                                <img class="mx-auto rounded-circle" src="assets/img/team/adil.png" alt="..." />
+                                <h4>Achmad Adil Arasy</h4>
+                                <p class="text-muted">247006111128</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="team-member text-center">
+                                <img class="mx-auto rounded-circle" src="assets/img/team/farrel.png" alt="..." />
+                                <h4>Farrel Fernaldy Putra Zaeni</h4>
+                                <p class="text-muted">247006111138</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Baris 2: 2 Orang -->
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="team-member text-center">
+                                <img class="mx-auto rounded-circle" src="assets/img/team/ripki.png" alt="..." />
+                                <h4>Ripki Maulana</h4>
+                                <p class="text-muted">247006111139</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="team-member text-center">
+                                <img class="mx-auto rounded-circle" src="assets/img/team/fadhli.png" alt="..." />
+                                <h4>Fadhli Fajrial Habibie</h4>
+                                <p class="text-muted">247006111142</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
+                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+             <!-- 🔊 AI Assistant Floating Button -->
+            <div class="ai-assistant">
+            <button id="voiceBtn">🎙️ Tanya Asisten</button>
+            <div id="aiResponse" class="mt-2"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2025</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals-->
+
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Perencanaan Akademik</h2>
+                                <p class="item-intro text-muted">Nilai, studi, dan rencana semester Anda.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/akademik.png"
+                                    alt="..." />
+                                <p>Fitur perencanaan akademik berfungsi sebagai panduan bagi mahasiswa dalam mengatur
+                                    jalur studi mereka secara efektif. Melalui fitur ini, pengguna dapat mencatat daftar
+                                    mata kuliah yang telah atau akan diambil, merencanakan pengisian KRS, memantau nilai
+                                    tiap semester, serta menghitung IP dan IPK secara otomatis. Selain itu, fitur ini
+                                    juga membantu dalam menetapkan target akademik, seperti lulus tepat waktu atau
+                                    mempertahankan prestasi. Dengan tampilan yang rapi dan user-friendly, mahasiswa
+                                    dapat lebih fokus, terorganisir, dan siap menghadapi setiap semester dengan strategi
+                                    yang jelas.</p>
+                                <a href="./pages/akademik.html" class="pr-btn">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">Here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- 🎙️ Asisten AI -->
-  <div class="ai-assistant">
-    <button id="voiceBtn">🎙️ Tanya Asisten</button>
-    <div id="aiResponse"></div>
-    
-  </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
 
-  <!-- 🔗 Navigasi -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="./Pages/fitur.html">Fitur</a></li>
-      <li><a href="./Pages/partner.html">Partner</a></li>
-      <li><a href="./Pages/aboutme.html">About Me</a></li>
-    </ul>
-  </nav>
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Perencanaan Keuangan</h2>
+                                <p class="item-intro text-muted">Tabungan, investasi, dan kontrol pengeluaran.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/keuangan.png"
+                                    alt="..." />
+                                <p>Fitur perencanaan keuangan ini dirancang untuk membantu mahasiswa mengelola
+                                    pengeluaran dan pemasukan selama masa studi. Pengguna dapat mencatat kebutuhan
+                                    bulanan, seperti biaya makan, transportasi, kuota internet, hingga pengeluaran tak
+                                    terduga. Dengan tampilan yang praktis dan mudah digunakan, fitur ini membantu
+                                    mahasiswa membuat anggaran yang seimbang dan menjaga kestabilan keuangan agar tetap
+                                    fokus pada perkuliahan.</p>
+                                <a href="./pages/keuangan.html" class="pr-btn">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">Here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- 🌌 Efek Matrix -->
-  <canvas id="matrix"></canvas>
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
 
-  <!-- 🎵 Musik Latar -->
-  <audio autoplay loop id="bgmusic">
-    <source src="https://cdn.pixabay.com/download/audio/2022/12/09/audio_0dc98f1e75.mp3?filename=cyberpunk-moonlight-126199.mp3" type="audio/mpeg" />
-  </audio>
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Pengembangan Diri dan Mental</h2>
+                                <p class="item-intro text-muted">Mindset positif, buku, journaling, dan refleksi.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/pengembangan-diri.png"
+                                    alt="..." />
+                                <p>Fitur pengembangan diri dan mental bertujuan mendukung mahasiswa dalam menjaga
+                                    kesehatan mental sekaligus meningkatkan kualitas diri selama menjalani studi. Di
+                                    dalamnya, pengguna dapat mencatat kegiatan refleksi diri, target pengembangan soft
+                                    skill, hingga kebiasaan positif harian seperti membaca, olahraga, atau meditasi.
+                                    Dengan pendekatan yang personal dan terarah, fitur ini membantu mahasiswa membentuk
+                                    kebiasaan sehat, menjaga keseimbangan emosional, dan tumbuh menjadi individu yang
+                                    lebih tangguh dan percaya diri.</p>
+                                <a href="./pages/pengembangan-diri.html" class="pr-btn">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">Here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- 🧠 Panel Informasi -->
-  <div class="digital-board">
-    <h2>👁️ Selamat Datang di LifePlanCalc</h2>
-    <p>
-      LifePlanCalc adalah sistem berbasis AI yang membantu Anda merencanakan kehidupan secara strategis,
-      mulai dari karier, akademik, kesehatan, hingga pengembangan diri.
-    </p>
-  </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <div class="digital-board">
-    <h2>🧠 Apa yang Bisa Dilakukan?</h2>
-    <p>
-      Dengan teknologi AI dan analisis wajah, sistem ini membaca ekspresi, emosi, dan fokus Anda,
-      lalu memberi rekomendasi rencana hidup yang paling sesuai.
-    </p>
-  </div>
+    <!-- Core theme JS-->
+    <script src="js/script.js"></script>
 
-  <div class="digital-board">
-    <h2>🚀 Siapa Kami?</h2>
-    <p>
-      Kami adalah tim mahasiswa inovatif dari Teknik Informatika yang berambisi membawa perencanaan hidup
-      ke level selanjutnya—menggabungkan teknologi, psikologi, dan data.
-    </p>
-  </div>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-  <!-- 📌 Konten Utama -->
-  <main class="container" id="main">
-    <h2 id="fitur">📌 Masalah Umum</h2>
-    <ul>
-      <li>❌ Kehilangan arah hidup</li>
-      <li>❌ Rencana tanpa strategi nyata</li>
-      <li>❌ Tidak ada pemantauan perkembangan</li>
-    </ul>
-
-    <h2>✅ Solusi LifePlanCalc</h2>
-    <ul>
-      <li>⚡ Rencana visual interaktif</li>
-      <li>⚡ Rekomendasi berbasis data pribadi</li>
-      <li>⚡ Evaluasi rutin dan grafik pertumbuhan</li>
-    </ul>
-
-    <div id="data-output" style="color: #00ccff; padding: 1rem; font-family: monospace;"></div>
-  </main>
-
-  <!-- 📜 Script -->
-  <script src="script.js"></script>
-  <script src="./ai-assistent/voice-groq.js"></script>
-
-
+    <script src="./ai-assistent/voice-groq.js"></script>
 </body>
+
 </html>
